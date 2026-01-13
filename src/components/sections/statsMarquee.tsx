@@ -13,7 +13,7 @@ const StatsMarquee = () => {
       >
         {[...Array(6)].map((_, i) => (
           <div key={i} className="flex items-center gap-12">
-            <span className="text-7xl md:text-9xl font-serif text-white/10 font-bold tracking-tighter">
+            <span className="text-7xl md:text-9xl font-serif text-white/50 font-bold tracking-tighter">
               90+
             </span>
             <span className="text-white/40 text-xs uppercase tracking-widest">
@@ -22,7 +22,7 @@ const StatsMarquee = () => {
 
             <span className="w-[1px] h-12 bg-white/20" />
 
-            <span className="text-7xl md:text-9xl font-serif text-white/10 font-bold tracking-tighter">
+            <span className="text-7xl md:text-9xl font-serif text-white/50 font-bold tracking-tighter">
               $28.5M
             </span>
             <span className="text-white/40 text-xs uppercase tracking-widest">
@@ -31,7 +31,7 @@ const StatsMarquee = () => {
 
             <span className="w-[1px] h-12 bg-white/20" />
 
-            <span className="text-7xl md:text-9xl font-serif text-white/10 font-bold tracking-tighter">
+            <span className="text-7xl md:text-9xl font-serif text-white/50 font-bold tracking-tighter">
               30
             </span>
             <span className="text-white/40 text-xs uppercase tracking-widest">

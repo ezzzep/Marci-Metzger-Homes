@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -22,11 +23,13 @@ const Navbar = () => {
           : "bg-transparent"
       }`}
     >
-      <a
-        href="#home"
-        className="text-xl font-serif tracking-tighter font-bold text-black z-50"
-      >
-        MARCI METZGER
+      <a href="#home" className="relative z-50 block w-[150px] h-[50px]">
+        <Image
+          src="/images/marciMetzgerHomesBlack.png"
+          alt="Marci Metzger Homes"
+          fill
+          className="object-contain"
+        />
       </a>
 
       <div className="hidden md:flex items-center gap-12">
