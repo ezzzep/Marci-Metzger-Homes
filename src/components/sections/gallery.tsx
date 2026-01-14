@@ -9,51 +9,51 @@ const Gallery = () => {
   const images = [
     {
       id: 1,
-      src: "/images/cover.png",
-      title: "Community View",
-      desc: "Central Lake & Greenery",
+      src: "/images/carouselOne.png",
+      title: "Community Outlook",
+      desc: "Peaceful neighborhood views.",
       span: "col-span-1 md:col-span-2 row-span-2",
     },
     {
       id: 3,
-      src: "/images/getItSold.png",
-      title: "Kitchen",
-      desc: "State of Art",
+      src: "/images/carouselTwo.png",
+      title: "Interior Features",
+      desc: "Stylish, functional interiors.",
       span: "col-span-1 row-span-1",
     },
     {
       id: 4,
-      src: "/images/justLike.png",
-      title: "Poolside",
-      desc: "Exterior",
+      src: "/images/carouselThree.png",
+      title: "Garage Frontage",
+      desc: "Spacious, accessible garage.",
       span: "col-span-1 md:col-span-2 row-span-1",
     },
     {
       id: 5,
-      src: "/images/cover.png",
-      title: "Mountain View",
-      desc: "Scenic",
+      src: "/images/carouselFour.png",
+      title: "Panoramic Mountain View",
+      desc: "Breathtaking mountain vistas",
       span: "col-span-1 md:col-span-2 row-span-1",
     },
     {
       id: 6,
-      src: "/images/account.png",
-      title: "Bedroom",
-      desc: "Sanctuary",
+      src: "/images/carouselFive.png",
+      title: "Overhead Property Perspective",
+      desc: "Aerial view of the property.",
       span: "col-span-1 row-span-1",
     },
     {
       id: 7,
-      src: "/images/getItSold.png",
-      title: "Dining Area",
-      desc: "Elegant",
+      src: "/images/carouselSix.png",
+      title: "Landscaped Yard ",
+      desc: "Beautifully maintained outdoor space.",
       span: "col-span-1 md:col-span-2 row-span-1",
     },
     {
       id: 2,
-      src: "/images/account.png",
-      title: "Interior Space",
-      desc: "Modern Comfort",
+      src: "/images/carouselSeven.png",
+      title: "Townhouse street view",
+      desc: "Contemporary living with convenience.",
       span: "col-span-1 row-span-1",
     },
   ];
@@ -79,12 +79,16 @@ const Gallery = () => {
   const [ref, inView] = useInView({ threshold: 0.1 });
 
   return (
-    <section id="gallery" ref={ref} className="py-32 bg-white">
-      <div className="container mx-auto px-6 md:px-12">
+    <section
+      id="gallery"
+      ref={ref}
+      className="py-24 sm:py-32 md:py-36 lg:py-40 bg-white"
+    >
+      <div className="container mx-auto px-4 sm:px-6 md:px-12 lg:px-24">
         <motion.div
           initial={{ opacity: 0 }}
           animate={inView ? { opacity: 1 } : {}}
-          className="grid grid-cols-1 md:grid-cols-3 gap-4 h-auto md:h-[900px]"
+          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 h-auto md:h-[900px]"
         >
           <motion.div
             initial={{ opacity: 0 }}
@@ -95,16 +99,15 @@ const Gallery = () => {
               setIsModalOpen(true);
               setCurrentIndex(0);
             }}
-            className="relative overflow-hidden col-span-1 row-span-2 flex flex-col items-center justify-center bg-white border-t border-l border-black/10 group cursor-pointer"
+            className="relative overflow-hidden col-span-1 row-span-2 flex flex-col items-center justify-center bg-white border-t border-l border-black/10 group cursor-pointer min-h-[300px] sm:min-h-0"
           >
             <div className="absolute inset-0 bg-gray-50 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
             <div className="relative z-10 text-center p-6 flex flex-col justify-center items-center h-full">
-              <h2 className="font-serif text-4xl md:text-5xl text-black leading-none tracking-tight mb-4">
-                PHOTO <br />
-                GALLERY
+              <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-black leading-none tracking-tight mb-4">
+                PHOTO <br /> GALLERY
               </h2>
-              <button className="text-[10px] uppercase tracking-widest text-black border-b border-black/30 pb-1 hover:border-black transition-colors">
-                Click Here to Browse Collection
+              <button className="text-[10px] uppercase tracking-widest text-black border-b border-black/30 pb-1 hover:border-black transition-colors cursor-pointer">
+                Browse Collection
               </button>
             </div>
           </motion.div>
@@ -120,7 +123,7 @@ const Gallery = () => {
                 setIsModalOpen(true);
                 setCurrentIndex(idx);
               }}
-              className={`relative overflow-hidden group cursor-pointer ${img.span}`}
+              className={`relative overflow-hidden group cursor-pointer ${img.span} min-h-[250px] sm:min-h-0`}
             >
               <Image
                 src={img.src}
@@ -129,11 +132,13 @@ const Gallery = () => {
                 className="object-cover transition-transform duration-1000 group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors" />
-              <div className="absolute bottom-0 left-0 p-8 text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                <p className="text-xs uppercase tracking-widest mb-1 text-gray-300">
+              <div className="absolute bottom-0 left-0 p-4 sm:p-6 md:p-8 text-white transform-none sm:transform sm:translate-y-4 sm:group-hover:translate-y-0 transition-transform duration-500 sm:group-hover:opacity-0  to-transparent sm:bg-transparent">
+                <p className="text-[9px] sm:text-xs uppercase tracking-widest mb-1 text-gray-300">
                   {img.desc}
                 </p>
-                <h3 className="font-serif text-2xl">{img.title}</h3>
+                <h3 className="font-serif text-lg sm:text-xl md:text-2xl">
+                  {img.title}
+                </h3>
               </div>
             </motion.div>
           ))}
@@ -147,7 +152,7 @@ const Gallery = () => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.5 }}
-            className="fixed inset-0 z-[100] flex items-center justify-center bg-black/95 backdrop-blur-md"
+            className="fixed inset-0 z-[100] flex items-center justify-center bg-black/95 backdrop-blur-md p-4 sm:p-6 md:p-8"
             onClick={() => setIsModalOpen(false)}
           >
             <motion.div
@@ -156,72 +161,69 @@ const Gallery = () => {
               exit={{ clipPath: "circle(0% at 50% 50%)" }}
               transition={{ duration: 0.8, ease: [0.76, 0, 0.24, 1] }}
               onClick={(e) => e.stopPropagation()}
-              className="w-full h-full max-w-[90vw] max-h-[90vh] flex items-center justify-center p-4 md:p-8"
+              className="w-full h-full max-w-[95vw] max-h-[95vh] flex flex-col md:flex-row items-center justify-center"
             >
-              <div className="relative w-full h-full flex flex-col md:flex-row bg-white shadow-2xl overflow-hidden rounded-xl">
-                <div className="relative w-full md:w-3/4 h-[55vh] md:h-full bg-black overflow-hidden">
-                  <Image
-                    src={images[currentIndex].src}
-                    alt={images[currentIndex].title}
-                    fill
-                    className="object-cover"
-                    priority
-                  />
+              <div className="relative w-full md:w-3/4 h-[40vh] sm:h-[50vh] md:h-[60vh] lg:h-full bg-black overflow-hidden rounded-t-xl md:rounded-tr-none md:rounded-tl-xl">
+                <Image
+                  src={images[currentIndex].src}
+                  alt={images[currentIndex].title}
+                  fill
+                  className="object-cover"
+                  priority
+                />
+                <div className="absolute inset-0 opacity-10 mix-blend-overlay pointer-events-none">
+                  <div className="w-full h-full bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
+                </div>
+              </div>
 
-                  <div className="absolute inset-0 opacity-10 mix-blend-overlay pointer-events-none">
-                    <div className="w-full h-full bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
-                  </div>
+              <div className="relative w-full md:w-1/4 h-auto md:h-full px-6 py-6 sm:py-8 md:px-8 md:py-10 flex flex-col justify-between bg-white z-10 rounded-b-xl md:rounded-br-none md:rounded-bl-xl">
+                <div>
+                  <span className="text-[10px] uppercase tracking-widest text-gray-400 block mb-2">
+                    Project
+                  </span>
+                  <h1 className="font-serif text-2xl sm:text-2xl md:text-3xl text-black leading-tight">
+                    {images[currentIndex].title}
+                  </h1>
                 </div>
 
-                <div className="relative w-full md:w-1/4 h-full px-6 md:px-8 py-8 md:py-10 flex flex-col justify-between bg-white z-10">
-                  <div>
-                    <span className="text-[10px] uppercase tracking-widest text-gray-400 block mb-2">
-                      Project
+                <div className="my-6">
+                  <p className="font-light text-sm sm:text-base md:text-base text-gray-600 leading-relaxed text-justify">
+                    {images[currentIndex].desc}
+                  </p>
+                </div>
+
+                <div className="flex flex-col gap-6">
+                  <div className="flex items-baseline gap-2">
+                    <span className="font-mono text-3xl font-bold text-black">
+                      0{currentIndex + 1}
                     </span>
-                    <h1 className="font-serif text-2xl md:text-3xl text-black leading-tight">
-                      {images[currentIndex].title}
-                    </h1>
+                    <span className="text-xs text-gray-400 font-mono">
+                      / {images.length.toString().padStart(2, "0")}
+                    </span>
                   </div>
 
-                  <div className="my-6">
-                    <p className="font-light text-sm md:text-base text-gray-600 leading-relaxed text-justify">
-                      {images[currentIndex].desc}
-                    </p>
+                  <div className="flex gap-3">
+                    <button
+                      onClick={prevImage}
+                      className="flex-1 py-2 text-xs border border-black/20 uppercase tracking-widest hover:bg-black hover:text-white transition-all cursor-pointer"
+                    >
+                      Prev
+                    </button>
+                    <button
+                      onClick={nextImage}
+                      className="flex-1 py-2 text-xs border border-black/20 uppercase tracking-widest hover:bg-black hover:text-white transition-all cursor-pointer"
+                    >
+                      Next
+                    </button>
                   </div>
-
-                  <div className="flex flex-col gap-6">
-                    <div className="flex items-baseline gap-2">
-                      <span className="font-mono text-3xl font-bold text-black">
-                        0{currentIndex + 1}
-                      </span>
-                      <span className="text-xs text-gray-400 font-mono">
-                        / {images.length.toString().padStart(2, "0")}
-                      </span>
-                    </div>
-
-                    <div className="flex gap-3">
-                      <button
-                        onClick={prevImage}
-                        className="flex-1 py-2 border border-black/20 text-[10px] uppercase tracking-widest hover:bg-black hover:text-white transition-all"
-                      >
-                        Prev
-                      </button>
-                      <button
-                        onClick={nextImage}
-                        className="flex-1 py-2 border border-black/20 text-[10px] uppercase tracking-widest hover:bg-black hover:text-white transition-all"
-                      >
-                        Next
-                      </button>
-                    </div>
-                  </div>
-
-                  <button
-                    onClick={() => setIsModalOpen(false)}
-                    className="absolute top-6 right-6 w-9 h-9 flex items-center justify-center rounded-full border border-black/10 hover:bg-black hover:text-white transition-all"
-                  >
-                    ✕
-                  </button>
                 </div>
+
+                <button
+                  onClick={() => setIsModalOpen(false)}
+                  className="absolute top-4 right-4 w-9 h-9 flex items-center justify-center rounded-full border border-black/10 hover:bg-black hover:text-white transition-all cursor-pointer"
+                >
+                  ✕
+                </button>
               </div>
             </motion.div>
           </motion.div>
@@ -232,4 +234,3 @@ const Gallery = () => {
 };
 
 export default Gallery;
-    

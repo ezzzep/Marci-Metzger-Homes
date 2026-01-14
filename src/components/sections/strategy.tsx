@@ -95,7 +95,7 @@ const Strategy = () => {
               className="relative overflow-hidden z-10 h-full w-full group cursor-pointer"
             >
               <Image
-                src="/images/cover.png"
+                src="/images/justLike.png"
                 alt="Strategy 2"
                 fill
                 className="object-cover transition-all duration-700 group-hover:grayscale"
@@ -122,7 +122,7 @@ const Strategy = () => {
               className="relative overflow-hidden z-10 h-full w-full group cursor-pointer"
             >
               <Image
-                src="/images/justLike.png"
+                src="/images/guide.png"
                 alt="Strategy 3"
                 fill
                 className="object-cover transition-all duration-700 group-hover:grayscale"
