@@ -1,16 +1,24 @@
 "use client";
 
 import React from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform, Variants } from "framer-motion";
 import Image from "next/image";
 
-const textReveal = {
-  hidden: { opacity: 0, y: 60, clipPath: "inset(0 0 100% 0)" },
-  visible: (i = 0) => ({
+const textReveal: Variants = {
+  hidden: {
+    opacity: 0,
+    y: 60,
+    clipPath: "inset(0 0 100% 0)",
+  },
+  visible: (i: number = 0) => ({
     opacity: 1,
     y: 0,
     clipPath: "inset(0 0 0% 0)",
-    transition: { delay: i * 0.1, duration: 1.2, ease: [0.22, 1, 0.36, 1] },
+    transition: {
+      delay: i * 0.1,
+      duration: 1.2,
+      ease: [0.22, 1, 0.36, 1],
+    },
   }),
 };
 
