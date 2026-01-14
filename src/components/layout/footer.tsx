@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 
 const Footer = () => (
   <footer className="bg-neutral-950 text-white py-12 border-t border-neutral-800 relative">
@@ -15,7 +16,7 @@ const Footer = () => (
 
         <div className="flex justify-center md:justify-end items-center gap-3">
           <a
-            href="#"
+            href="https://www.facebook.com/MarciHomes/"
             className="group relative w-10 h-10 flex items-center justify-center border border-white/20 rounded-full hover:bg-white hover:border-white transition-all duration-300"
           >
             <svg
@@ -28,7 +29,7 @@ const Footer = () => (
           </a>
 
           <a
-            href="#"
+            href="https://www.instagram.com/marciandlauren_nvrealtors/"
             className="group relative w-10 h-10 flex items-center justify-center border border-white/20 rounded-full hover:bg-white hover:border-white transition-all duration-300"
           >
             <svg
@@ -45,7 +46,7 @@ const Footer = () => (
           </a>
 
           <a
-            href="#"
+            href="https://www.linkedin.com/authwall?trk=gf&trkInfo=AQHOJNLF_UT7lwAAAZu6D7gYq9YjE0gzCkSyuTIHh7v8ttmjXfS3MQfrUuI2UA97bEEfLYo9-m7Ppo_CcKk7vlhQSyQ_apLXVzIDHLfa1VsWNm0uzyhP6NTfKEpKJ127vZs5k-M=&original_referer=https://marcimetzger.com/&sessionRedirect=https%3A%2F%2Fwww.linkedin.com%2Fin%2Fmarci-metzger-30642496%2F"
             className="group relative w-10 h-10 flex items-center justify-center border border-white/20 rounded-full hover:bg-white hover:border-white transition-all duration-300"
           >
             <svg
@@ -58,16 +59,23 @@ const Footer = () => (
           </a>
 
           <a
-            href="#"
-            className="group relative w-10 h-10 flex items-center justify-center border border-white/20 rounded-full hover:bg-white hover:border-white transition-all duration-300"
+            href="https://www.yelp.com/biz/marci-metzger-the-ridge-realty-pahrump"
+            className="group relative w-10 h-10 flex items-center justify-center border border-white/20 rounded-full hover:bg-white hover:border-white transition-all duration-300 overflow-hidden"
           >
-            <svg
-              className="w-4 h-4 text-white group-hover:text-black transition-colors duration-300"
-              fill="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path d="M12.426 4.672c.613-1.664.808-2.568.603-2.835-.192-.258-.754-.332-1.537-.195-.076.015-.139.025-.184.038l-4.758 1.391c-1.635.48-2.335.834-2.647 1.229-.312.394-.426 1.057-.537 2.441l-.258 3.293c-.023.299-.045.549-.045.75 0 4.771 3.775 8.7 8.5 8.7s8.5-3.929 8.5-8.7c0-.201-.022-.451-.045-.75l-.258-3.293c-.111-1.384-.225-2.047-.537-2.441-.312-.395-1.012-.749-2.647-1.229l-4.758-1.391c-.045-.013-.108-.023-.184-.038-.783-.137-1.345-.063-1.537.195-.205.267-.01 1.171.603 2.835l2.3 6.226c.278.753.424 1.073.762 1.073s.484-.32.762-1.073l2.3-6.226zm-.426 14.328c-4.418 0-8-3.49-8-7.8 0-.015 0-.03.002-.045.002-.015.002-.03.002-.045 0-4.31-3.582-7.8-8-7.8-4.418 0-8 3.49-8 7.8s3.582 7.8 8 7.8c4.418 0 8-3.49 8-7.8 0-.015 0-.03-.002-.045-.002-.015-.002-.03-.002-.045 0-4.31-3.582-7.8-8-7.8z" />
-            </svg>
+            <Image
+              src="/yelp1.svg"
+              alt="Yelp default"
+              width={20}
+              height={20}
+              className="w-4 h-4 group-hover:hidden"
+            />
+            <Image
+              src="/yelp.svg"
+              alt="Yelp hover"
+              width={20}
+              height={20}
+              className="w-4 h-4 hidden group-hover:block"
+            />
           </a>
         </div>
       </div>

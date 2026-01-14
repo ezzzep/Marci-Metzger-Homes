@@ -46,16 +46,16 @@ const Navbar = () => {
           Strategy
         </a>
         <a
-          href="#services"
-          className="text-xs uppercase tracking-widest text-black/60 hover:text-black transition-colors"
-        >
-          Expertise
-        </a>
-        <a
           href="#gallery"
           className="text-xs uppercase tracking-widest text-black/60 hover:text-black transition-colors"
         >
           Gallery
+        </a>
+        <a
+          href="#services"
+          className="text-xs uppercase tracking-widest text-black/60 hover:text-black transition-colors"
+        >
+          Expertise
         </a>
         <a
           href="#contact"
