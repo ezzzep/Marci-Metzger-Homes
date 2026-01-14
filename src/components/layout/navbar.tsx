@@ -37,7 +37,7 @@ const Navbar = () => {
           href="#about"
           className="text-xs uppercase tracking-widest text-black/60 hover:text-black transition-colors"
         >
-          Agent
+          MEET MARCI
         </a>
         <a
           href="#strategy"
